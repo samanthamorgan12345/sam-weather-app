@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SheCodes Weather</title>
+    <meta charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fe6217a13f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <form id="change-city">
+        <label> Change Location </label>
+        <input type="text" placeholder="Enter City" id = "city-entered"/>
+        <input type="submit" placeholder="Enter" />
+    </form> 
+    <button id="gps-button">
+        <label> Current Location </label>
+    </button>
+    <div class="cityWeather">
+        <div class="mx-auto" style="max-width: 800px;" >
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="images/sunny.svg" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-7">
+                    <div class="weatherText">
+                        <h5 id="weather-city"></h5>
+                        <h3 class="dateTime"></h3>
+                        <p><span id="weather-data"> </span>°<a href id="far-link">F</a>  <font size=5> /</font><a href id="cel-link"> C° </a></br><span id = "weather-description"> </span>
+                        </p>
+                        <p class="card-text"><small class="text-muted" id="max-and-min">85°/69°</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weatherFuture">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-cloud"></i></h5>
+                            <p class="card-text">78°/64° </br>
+                            Cloudy </br>
+                            Monday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-cloud-sun-rain"></i></h5>
+                            <p class="card-text">70°/58° </br>
+                            Rain </br>
+                            Tuesday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-cloud"></i></h5>
+                            <p class="card-text">73°/64° </br>
+                            Cloudy </br>
+                            Wednesday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+                            <p class="card-text">80°/68° </br>
+                            Sunny </br>
+                            Thursday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+                            <p class="card-text">87°/72° </br>
+                            Sunny </br>
+                            Friday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="app"></div>
+        <script src="src/java.js"></script>
+</body>
+
+</html>
