@@ -25,6 +25,7 @@ body {
   background-color: #fa9f25;
   outline: #003049;
   border-radius: 40px;
+  color: #31444c;
 }
 #max-and-min {
   font-size: 40px;
@@ -64,6 +65,8 @@ body {
   outline: #003049;
   border-radius: 40px;
   width: 125px;
+  text-decoration: none;
+  color: #31444c;
 }
 .fas.fa-sun {
   color: #fcbf49;
