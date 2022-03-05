@@ -54,6 +54,17 @@ body {
   color: #31444c;
   padding: 30px;
 }
+#repository {
+  display: block;
+  border: 0px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 25px;
+  background-color: #fa9f25;
+  outline: #003049;
+  border-radius: 40px;
+  width: 125px;
+}
 .fas.fa-sun {
   color: #fcbf49;
 }
