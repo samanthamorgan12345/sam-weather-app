@@ -55,7 +55,7 @@ body {
   color: #31444c;
   padding: 30px;
 }
-#repository {
+#repository-button {
   display: block;
   border: 0px;
   padding: 15px;
@@ -65,6 +65,8 @@ body {
   outline: #003049;
   border-radius: 40px;
   width: 125px;
+}
+#repository-text {
   text-decoration: none;
   color: #31444c;
 }
