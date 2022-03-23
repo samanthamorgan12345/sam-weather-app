@@ -21,12 +21,17 @@ function getCurrentLocation(event) {
 }
 
 function showWeather(response) {
+
+  let weatherIcon = document.querySelector("#weather-picture");
+
   document.querySelector("#weather-city").innerHTML = response.data.name;
   document.querySelector("#weather-data").innerHTML = Math.round(response.data.main.temp);
 
   document.querySelector("#max-and-min").innerHTML = `${Math.round(response.data.main.temp_max)}° / ${Math.round(response.data.main.temp_min)}°`;
   
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
+  
+  weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
 }
 
 function gpsPosition(position){
