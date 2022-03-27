@@ -67,6 +67,10 @@ body {
   border-radius: 40px;
   width: 125px;
 }
+.weatherText .active {
+  color: #31444c;
+  text-decoration: none;
+}
 #repository-text {
   text-decoration: none;
   color: #31444c;

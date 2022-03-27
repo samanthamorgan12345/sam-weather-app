@@ -24,6 +24,8 @@ function showWeather(response) {
 
   let weatherIcon = document.querySelector("#weather-picture");
 
+  farTemp = response.data.main.temp;
+
   document.querySelector("#weather-city").innerHTML = response.data.name;
   document.querySelector("#weather-data").innerHTML = Math.round(response.data.main.temp);
 
@@ -42,6 +44,28 @@ function gpsPosition(position){
   axios.get(url).then(showWeather);
 }
 
+function showCel(event){
+  event.preventDefault();
+  let tempFar = document.querySelector("#weather-data");
+  let celTemp = ((farTemp - 32) * 5 / 9);
+
+  farLink.classList.remove("active");
+  celLink.classList.add("active");
+  tempFar.innerHTML = Math.round(celTemp);
+  
+}
+
+function showFar(event){
+  event.preventDefault();
+  let tempCel = document.querySelector("#weather-data");
+
+  farLink.classList.add("active");
+  celLink.classList.remove("active");
+
+  tempCel.innerHTML = Math.round(farTemp);
+}
+
+
 
 
 let button = document.querySelector("#gps-button");
@@ -49,7 +73,7 @@ let button = document.querySelector("#gps-button");
 button.addEventListener("click", getCurrentLocation);
 
 
-search("New York");
+let farTemp = null;
 
 
 let form = document.querySelector("#change-city");
@@ -78,3 +102,15 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 let month = months[now.getMonth()];
 
 h3.innerHTML = `${month} ${date}, ${year} ${hours}:${minutes}`
+
+
+let celLink = document.querySelector("#cel-link");
+
+celLink.addEventListener("click", showCel);
+
+
+let farLink = document.querySelector("#far-link");
+
+farLink.addEventListener("click", showFar);
+
+search("New York");
