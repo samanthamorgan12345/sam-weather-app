@@ -28,6 +28,7 @@ body {
   border-radius: 40px;
   color: #31444c;
 }
+
 #max-and-min {
   font-size: 40px;
 }
@@ -43,6 +44,12 @@ body {
   text-align: center;
   color: #31444c;
   font-size: 55px;
+}
+#wind-speed-text {
+  font-size: 20px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .weatherFacts {

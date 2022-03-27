@@ -34,6 +34,8 @@ function showWeather(response) {
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   
   weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
+
+  document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
 }
 
 function gpsPosition(position){
@@ -44,6 +46,7 @@ function gpsPosition(position){
   axios.get(url).then(showWeather);
 }
 
+
 function showCel(event){
   event.preventDefault();
   let tempFar = document.querySelector("#weather-data");
@@ -52,19 +55,21 @@ function showCel(event){
   farLink.classList.remove("active");
   celLink.classList.add("active");
   tempFar.innerHTML = Math.round(celTemp);
-  
+
+
 }
 
 function showFar(event){
-  event.preventDefault();
-  let tempCel = document.querySelector("#weather-data");
+      event.preventDefault();
+      let tempCel = document.querySelector("#weather-data");
 
-  farLink.classList.add("active");
-  celLink.classList.remove("active");
+      farLink.classList.add("active");
+      celLink.classList.remove("active");
 
-  tempCel.innerHTML = Math.round(farTemp);
+      tempCel.innerHTML = Math.round(farTemp);
+
+
 }
-
 
 
 
@@ -81,6 +86,14 @@ let form = document.querySelector("#change-city");
 form.addEventListener("submit", handleSubmit);
 
 
+let celLink = document.querySelector("#cel-link");
+
+celLink.addEventListener("click", showCel);
+
+
+let farLink = document.querySelector("#far-link");
+
+farLink.addEventListener("click", showFar);
 
 
 let now = new Date();
@@ -104,13 +117,6 @@ let month = months[now.getMonth()];
 h3.innerHTML = `${month} ${date}, ${year} ${hours}:${minutes}`
 
 
-let celLink = document.querySelector("#cel-link");
 
-celLink.addEventListener("click", showCel);
-
-
-let farLink = document.querySelector("#far-link");
-
-farLink.addEventListener("click", showFar);
 
 search("New York");
