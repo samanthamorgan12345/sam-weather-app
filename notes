@@ -1,56 +1,55 @@
- <div class="weatherFuture">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-cloud"></i></h5>
-                            <p class="card-text">78°/64° </br>
-                            Cloudy </br>
-                            Monday</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-cloud-sun-rain"></i></h5>
-                            <p class="card-text">70°/58° </br>
-                            Rain </br>
-                            Tuesday</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-cloud"></i></h5>
-                            <p class="card-text">73°/64° </br>
-                            Cloudy </br>
-                            Wednesday</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
-                            <p class="card-text">80°/68° </br>
-                            Sunny </br>
-                            Thursday</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
-                            <p class="card-text">87°/72° </br>
-                            Sunny </br>
-                            Friday</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="col">
+    <div class="card" style="width: 8rem;">
+        <div class="card-body">
+            <p>Tuesday</p>
+            <h5 class="card-title"><i class="fas fa-cloud-sun-rain"></i></h5>
+            <p class="card-text">70°/58° </br>
+                Rain </br>
+            </p>
         </div>
-        
+    </div>
+</div>
+<div class="col">
+    <div class="card" style="width: 8rem;">
+        <div class="card-body">
+            <p>Wednesday</p>
+            <h5 class="card-title"><i class="fas fa-cloud"></i></h5>
+            <p class="card-text">73°/64° </br>
+                Cloudy </br>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card" style="width: 8rem;">
+        <div class="card-body">
+            <p>Thursday</p>
+            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+            <p class="card-text">80°/68° </br>
+                Sunny </br>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card" style="width: 8rem;">
+        <div class="card-body">
+            <p>Friday</p>
+            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+            <p class="card-text">87°/72° </br>
+                Sunny </br>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card" style="width: 8rem;">
+        <div class="card-body">
+            <p>Friday</p>
+            <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+            <p class="card-text">87°/72° </br>
+                Sunny </br>
+            </p>
+        </div>
+    </div>
+</div>
