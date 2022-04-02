@@ -36,6 +36,8 @@ function showWeather(response) {
   weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
 
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
+
+  
 }
 
 function gpsPosition(position){
@@ -70,6 +72,33 @@ function showFar(event){
 
 
 }
+
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+
+  
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function(day){
+    
+  forecastHTML = 
+    forecastHTML +
+    `<div class="col-2" id="forecast">
+        <h5 id="forecast-day">${day}</br>
+            <i class="fas fa-sun" id="forecast-icon"></i></br>
+            <span id="forecast-max-min">97/64</span>
+        </h5>
+
+    </div>`;
+  })
+  forecastHTML = forecastHTML + `</div>`  ;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 
 
 
@@ -120,3 +149,5 @@ h3.innerHTML = `${month} ${date}, ${year} ${hours}:${minutes}`
 
 
 search("New York");
+
+displayForecast();

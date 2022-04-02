@@ -51,14 +51,9 @@ body {
   padding: 0px;
   margin: 0px;
 }
-
-.weatherFacts {
-  text-align: center;
-  color: #31444c;
-  padding-right: 30px;
-  padding-left: 30px;
-}
-.weatherFuture {
+#forecast {
+  display: block;
+  margin: auto;
   text-align: center;
   color: #31444c;
   padding: 30px;
