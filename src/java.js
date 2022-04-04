@@ -49,29 +49,7 @@ function gpsPosition(position){
 }
 
 
-function showCel(event){
-  event.preventDefault();
-  let tempFar = document.querySelector("#weather-data");
-  let celTemp = ((farTemp - 32) * 5 / 9);
 
-  farLink.classList.remove("active");
-  celLink.classList.add("active");
-  tempFar.innerHTML = Math.round(celTemp);
-
-
-}
-
-function showFar(event){
-      event.preventDefault();
-      let tempCel = document.querySelector("#weather-data");
-
-      farLink.classList.add("active");
-      celLink.classList.remove("active");
-
-      tempCel.innerHTML = Math.round(farTemp);
-
-
-}
 
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000);
@@ -133,14 +111,7 @@ let form = document.querySelector("#change-city");
 form.addEventListener("submit", handleSubmit);
 
 
-let celLink = document.querySelector("#cel-link");
 
-celLink.addEventListener("click", showCel);
-
-
-let farLink = document.querySelector("#far-link");
-
-farLink.addEventListener("click", showFar);
 
 
 let now = new Date();
