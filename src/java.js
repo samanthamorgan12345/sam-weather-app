@@ -73,23 +73,39 @@ function showFar(event){
 
 }
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2" id="forecast">
-        <h5 id="forecast-day">${day}</br>
-            <i class="fas fa-sun" id="forecast-icon"></i></br>
-            <span id="forecast-max-min">97/64</span>
+        <h5 id="forecast-day">${formatDay(forecastDay.dt)}</br>
+            <span id="forecast-icon"><img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          
+        /></span></br>
+            <span id="forecast-max">${Math.round(forecastDay.temp.max)}</span>/<span id="forecast-min">${Math.round(forecastDay.temp.min)}</span>
         </h5>
 
       </div>`;
+        }
   })
 
   forecastHTML = forecastHTML + `</div>`;
