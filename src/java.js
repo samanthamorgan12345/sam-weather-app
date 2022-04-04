@@ -37,7 +37,7 @@ function showWeather(response) {
 
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
 
-  
+  getForecast(response.data.coord);
 }
 
 function gpsPosition(position){
@@ -73,32 +73,34 @@ function showFar(event){
 
 }
 
-function displayForecast(){
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thurs", "Fri", "Sat", "Sun"];
-
-  
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-
-  days.forEach(function(day){
-    
-  forecastHTML = 
-    forecastHTML +
-    `<div class="col-2" id="forecast">
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2" id="forecast">
         <h5 id="forecast-day">${day}</br>
             <i class="fas fa-sun" id="forecast-icon"></i></br>
             <span id="forecast-max-min">97/64</span>
         </h5>
 
-    </div>`;
+      </div>`;
   })
-  forecastHTML = forecastHTML + `</div>`  ;
 
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 
 
