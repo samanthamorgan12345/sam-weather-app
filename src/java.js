@@ -34,7 +34,6 @@ function showWeather(response) {
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
 
 
-  document.querySelector("#weather-playlist").innerHTML = `${response.data.weather[0].description} playlist`;
 
   
   weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
@@ -56,43 +55,6 @@ function gpsPosition(position){
   axios.get(url).then(showWeather);
 }
 
-function playlistLink() {
-  let weatherDescription = document.querySelector("#weather-description");
-
-<<<<<<< HEAD
-  if (weatherDescription === "broken clouds"){
-  window.open("https://open.spotify.com/user/22jmp3moifz7bensrir7cnlzi/playlist/2ypibiUcDri41k5ETEoEUJ?si=zXSk1XiZSNeKh4gKGIId_Q")
-  } else if (weatherDescription === "clear sky"){
-  window.open("https://open.spotify.com/user/popsugarsmart/playlist/1e82JSBwrnZF8TODtUcHeR?si=bucn2Se6Tn-URoJJOc1hWA")
-  } else {
-  window.open("https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXbvABJXBIyiY?si=diUrjAypS7eb9VrHHxhWiw")  
-  };
-}
-=======
-function showCel(event){
-  event.preventDefault();
-  let tempFar = document.querySelector("#weather-data");
-  let celTemp = ((farTemp - 32) * 5 / 9);
-
-  farLink.classList.remove("active");
-  celLink.classList.add("active");
-  tempFar.innerHTML = Math.round(celTemp);
-
-
-}
-
-function showFar(event){
-      event.preventDefault();
-      let tempCel = document.querySelector("#weather-data");
-
-      farLink.classList.add("active");
-      celLink.classList.remove("active");
->>>>>>> parent of dae48cc (removed °C conversion :()
-
-      tempCel.innerHTML = Math.round(farTemp);
-
-
-}
 
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000);
@@ -155,14 +117,7 @@ let form = document.querySelector("#change-city");
 form.addEventListener("submit", handleSubmit);
 
 
-let celLink = document.querySelector("#cel-link");
 
-celLink.addEventListener("click", showCel);
-
-
-let farLink = document.querySelector("#far-link");
-
-farLink.addEventListener("click", showFar);
 
 
 let now = new Date();
