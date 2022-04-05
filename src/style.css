@@ -40,6 +40,17 @@ body {
   font-size: 55px;
   text-decoration: none;
 }
+#weather-playlist {
+  display: block;
+  border: 0px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 25px;
+  background-color: rgb(234, 110, 75);
+  outline: #003049;
+  border-radius: 40px;
+  width: auto;
+}
 #weather-city {
   text-align: center;
   color: #31444c;

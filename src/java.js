@@ -15,7 +15,6 @@ function handleSubmit(event) {
 }
 
 function getCurrentLocation(event) {
-  console.log(event);
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(gpsPosition);
 }
@@ -23,6 +22,7 @@ function getCurrentLocation(event) {
 function showWeather(response) {
 
   let weatherIcon = document.querySelector("#weather-picture");
+
 
   farTemp = response.data.main.temp;
 
@@ -32,10 +32,18 @@ function showWeather(response) {
   document.querySelector("#max-and-min").innerHTML = `${Math.round(response.data.main.temp_max)}° / ${Math.round(response.data.main.temp_min)}°`;
   
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
+
+
+  document.querySelector("#weather-playlist").innerHTML = `${response.data.weather[0].description} playlist`;
+
   
   weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
 
+
+
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
+
+  
 
   getForecast(response.data.coord);
 }
@@ -48,7 +56,15 @@ function gpsPosition(position){
   axios.get(url).then(showWeather);
 }
 
-
+function playlistLink(description) {
+  if (description === `scattered clouds playlist`){
+  window.open("https://open.spotify.com/user/22jmp3moifz7bensrir7cnlzi/playlist/2ypibiUcDri41k5ETEoEUJ?si=zXSk1XiZSNeKh4gKGIId_Q")
+  } else if (description === `clear sky playlist`){
+  window.open("https://open.spotify.com/user/popsugarsmart/playlist/1e82JSBwrnZF8TODtUcHeR?si=bucn2Se6Tn-URoJJOc1hWA")
+  } else {
+  window.open("https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXbvABJXBIyiY?si=diUrjAypS7eb9VrHHxhWiw")  
+  };
+}
 
 
 function formatDay(timestamp){
@@ -59,6 +75,8 @@ function formatDay(timestamp){
 
   return days[day];
 }
+
+
 
 function displayForecast(response) {
 let forecast = response.data.daily;
