@@ -56,10 +56,12 @@ function gpsPosition(position){
   axios.get(url).then(showWeather);
 }
 
-function playlistLink(description) {
-  if (description === `scattered clouds playlist`){
+function playlistLink() {
+  let weatherDescription = document.querySelector("#weather-description");
+
+  if (weatherDescription === "broken clouds"){
   window.open("https://open.spotify.com/user/22jmp3moifz7bensrir7cnlzi/playlist/2ypibiUcDri41k5ETEoEUJ?si=zXSk1XiZSNeKh4gKGIId_Q")
-  } else if (description === `clear sky playlist`){
+  } else if (weatherDescription === "clear sky"){
   window.open("https://open.spotify.com/user/popsugarsmart/playlist/1e82JSBwrnZF8TODtUcHeR?si=bucn2Se6Tn-URoJJOc1hWA")
   } else {
   window.open("https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXbvABJXBIyiY?si=diUrjAypS7eb9VrHHxhWiw")  
@@ -99,7 +101,6 @@ let forecast = response.data.daily;
         /></span></br>
             <span id="forecast-max">${Math.round(forecastDay.temp.max)}</span>/<span id="forecast-min">${Math.round(forecastDay.temp.min)}</span>
         </h5>
-
       </div>`;
         }
   })
